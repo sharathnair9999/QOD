@@ -34,15 +34,29 @@ for (let i = 0; i < mat.length; i++) {
   }
 }
 
-console.log(mat);
+// console.log(mat);
 
 // anti-clockwise
 
+// let mat2 = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
 let mat2 = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 0, 1, 2],
+  [3, 4, 5, 6],
 ];
+
+// output : [
+//   [4,8,2,6],
+//   [3,7,1,5],
+//   [2,6,0,4],
+//   [1,5,9,3]
+// ]
 
 // output :
 // [
@@ -57,6 +71,8 @@ for (let i = 0; i < mat2.length; i++) {
   }
 }
 
-[mat2[0], mat2[mat2.length - 1]] = [mat2[mat2.length - 1], mat2[0]];
+for (let i = 0; i < mat2.length / 2; i++) {
+  [mat2[i], mat2[mat2.length - i - 1]] = [mat2[mat2.length - i - 1], mat2[i]];
+}
 
 console.log(mat2);
